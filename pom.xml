@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>Web UI Authomation</artifactId>
+  <artifactId>UI_Authomation</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>Web UI Authomation</name>
-  <!-- FIXME change it to the project's website -->
+  <name>UI_Automation</name>
+
   <url>http://www.example.com</url>
 
   <properties>
