@@ -37,7 +37,7 @@ public class AddSomeItems {
         addFirstOlives.click();
         addFirstOlives.clear();
         addFirstOlives.sendKeys("3");
-        //addFirstOlives.submit();
+        addFirstOlives.submit();
 
         WebElement addToBinOlives = driver.findElement(By.xpath("/html/body/div[2]/div[3]/div[2]/ul/li[1]/div[2]/div/span[2]/a/img"));
         addToBinOlives.click();
