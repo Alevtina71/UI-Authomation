@@ -32,11 +32,10 @@ public class TriangleTest {
 
     }
 
-    //@ParameterizedTest
-    //@CsvSource(value = {"-10,20,0", "-100, 200,0,1", "1,-2,-1000"})
-    //void testWithCsvSourceN(int a, int b, int c) throws MyException {
-      //  Triangle exampleClass = new Triangle();
-        //Assertions.assertThrows(MyException.class,()-> exampleClass.someMethod(a,b,c));
-
-    //}
+    @ParameterizedTest
+    @CsvSource(value = {"-10,20,0", "-100, 200,0,1", "1,-2,-1000"})
+    void testWithCsvSourceN(int a, int b, int c) throws MyException {
+      Triangle exampleClass = new Triangle();
+        Assertions.assertThrows(MyException.class,()-> exampleClass.someMethod(a,b,c));
+    }
 }
