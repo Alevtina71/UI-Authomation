@@ -1,4 +1,4 @@
-package lesson4;
+package org.example.lesson3;
 
 public class MyException extends Exception{
 

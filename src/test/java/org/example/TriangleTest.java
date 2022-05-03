@@ -1,7 +1,7 @@
 package org.example;
 
-import lesson4.Triangle;
-import lesson4.MyException;
+import org.example.lesson3.Triangle;
+import org.example.lesson3.MyException;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

@@ -1,9 +1,10 @@
-package lesson4;
+package org.example.lesson3;
+
 import java.util.Scanner;
 
-public class Triangle extends Throwable {
+public class Triangle {
 
-    public static void main(String[] args) {
+    void triangleArea (String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Введите первую сторону треугольника: ");
