@@ -36,7 +36,7 @@ public abstract class AbstractTest {
 
     @AfterAll
     static void close(){
-        //driver.quit();
+        driver.quit();
     }
 
     public static WebDriver getDriver() {

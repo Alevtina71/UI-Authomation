@@ -13,8 +13,8 @@ public class AuthorizationTest  extends AbstractTest{
     void test() throws Exception {
         getDriver().get("https://grekoliva.ru");
         WebElement webElement = getDriver().findElement(By.cssSelector("#qheader_login > a"));
+        Assertions.assertEquals("вход / регистрация",webElement.getText(),"Успешная авторизация");
         webElement.click();
-        //Assertions.assertEquals("authentication",getDriver().getTitle(),"Не та страница");
 
         Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
                 .withTimeout(Duration.ofSeconds(30))
