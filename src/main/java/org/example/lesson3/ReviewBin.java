@@ -21,9 +21,8 @@ public class ReviewBin {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.get("https://grekoliva.ru");
 
-        //WebElement webElement1 = driver.findElement(By.name("q"));
-        WebElement webElement2 = driver.findElement(By.xpath("//p[@id='cart-buttons']/a"));
-        webElement2.click();
+        WebElement webElement1 = driver.findElement(By.xpath("//p[@id='cart-buttons']/a"));
+        webElement1.click();
         /* try {
             WebElement webElementError = driver.findElement(By.name("error"));
         } catch (NoSuchElementException e){

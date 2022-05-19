@@ -27,15 +27,7 @@ public class Authorization {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         driver.get("https://grekoliva.ru");
 
-        //WebElement webElement1 = driver.findElement(By.name("q"));
         WebElement webElement2 = driver.findElement(By.cssSelector("#qheader_login > a"));
-
-        /* try {
-            WebElement webElementError = driver.findElement(By.name("error"));
-        } catch (NoSuchElementException e){
-            System.out.println(e.getSupportUrl());
-        } */
-
         webElement2.click();
 
         new WebDriverWait(driver, Duration.ofSeconds(3)).until(ExpectedConditions.urlContains("authentication"));
@@ -50,12 +42,6 @@ public class Authorization {
 
         WebElement loginButton = driver.findElement(By.name("SubmitLogin"));
         loginButton.click();
-
-        /*try {
-            webElement1.sendKeys("New search");
-        } catch (StaleElementReferenceException e){
-            System.out.println(e.getSupportUrl());
-        }*/
 
         try {
             driver.findElement(By.xpath(".//textarea")).click();

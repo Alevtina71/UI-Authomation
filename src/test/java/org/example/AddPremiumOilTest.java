@@ -22,10 +22,9 @@ public class AddPremiumOilTest extends AbstractTest{
         Assertions.assertEquals("PREMIUM ORGANIC", findPremiumOil.getText());
         findPremiumOil.click();
         new WebDriverWait(getDriver(), Duration.ofSeconds(3)).until(ExpectedConditions.urlContains("oil-premium-organic"));
-
+        Thread.sleep(1000);
         WebElement addPremiumOil = getDriver().findElement(By.xpath("//*[@id=\"product_list\"]/li[2]/div[2]/div/span[2]/a/img"));
         addPremiumOil.click();
-        Thread.sleep(1000);
 
         /*WebElement webElement1 = getDriver().findElement(By.xpath("//*[@id=\"cart_block_total\"]"));
         Assertions.assertEquals("0 руб.", webElement1.getText());
