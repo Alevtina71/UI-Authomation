@@ -47,7 +47,6 @@ public class MainMenu extends AbstractPage {
     public void ReviewBin(){
         Actions actions = new Actions(getDriver());
         actions
-                .moveToElement(webElement1)
                 .click(webElement1)
                 .click(webElement2)
                 .build().
@@ -57,7 +56,6 @@ public class MainMenu extends AbstractPage {
     public void AddSomeItems(){
         Actions actions = new Actions(getDriver());
         actions
-                .moveToElement(findOlives)
                 .click(findOlives)
                 .pause(1000)
                 .click(addOlives)
@@ -77,7 +75,6 @@ public class MainMenu extends AbstractPage {
     public void AddPremiumOil(){
         Actions actions = new Actions(getDriver());
         actions
-                .moveToElement(findOil)
                 .click(findOil)
                 .pause(1000)
                 .click(findPremiumOil)

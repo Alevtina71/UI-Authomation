@@ -11,7 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
-public class AbstractTest {
+public abstract class AbstractTest {
 
     static WebDriver webDriver;
 

@@ -12,15 +12,6 @@ public class AuthorizationTest extends AbstractTest {
                 .setLogin("gnocco@rambler.ru")
                 .setPassword("381038")
                 .loginIn();
-        Assertions.assertTrue(getWebDriver().findElement(By.cssSelector("#qheader_login > a")).getText().equals("вход / регистрация"), "Успешная авторизация");
-
-    }
-
-    @Test
-    // Негативный тест
-    void loginInNegative() {
-        new Authorization(getWebDriver())
-                .loginIn("gnocco@rambler.ru", "381038");
-        Assertions.assertTrue(getWebDriver().findElement(By.cssSelector("#qheader_login > a")).getText().equals("вход / регистрация"), "Успешная авторизация");
+        Assertions.assertEquals("вход / регистрация", getWebDriver().findElement(By.cssSelector("#qheader_login > a")).getText(), "Успешная авторизация");
     }
 }
