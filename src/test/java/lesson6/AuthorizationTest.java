@@ -9,9 +9,10 @@ public class AuthorizationTest extends AbstractTest {
     @Test
     void loginIn() throws InterruptedException {
         new Authorization(getWebDriver())
+                .input()
                 .setLogin("gnocco@rambler.ru")
                 .setPassword("381038")
-                .loginIn();
+                .loginIn("gnocco@rambler.ru", "381038");
         Assertions.assertEquals("вход / регистрация", getWebDriver().findElement(By.cssSelector("#qheader_login > a")).getText(), "Успешная авторизация");
     }
 }

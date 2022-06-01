@@ -2,7 +2,6 @@ package lesson6;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 public class MainMenu extends AbstractPage {
@@ -31,7 +30,7 @@ public class MainMenu extends AbstractPage {
     @FindBy(xpath = "//*[@id=\"cart_block_total\"]")
     private WebElement addToBinOlives;
 
-    @FindBy(xpath = "//*[@id=\\\"center_column\\\"]/div[2]/div[1]/h5/a")
+    @FindBy(xpath = "//*[@id=\"center_column\"]/div[2]/div[1]/h5/a")
     private WebElement findOil;
 
     @FindBy(xpath = "//div[@id='subcategories']/ul/li/a[2]")
@@ -44,43 +43,36 @@ public class MainMenu extends AbstractPage {
         super(driver);
     }
 
-    public void ReviewBin(){
-        Actions actions = new Actions(getDriver());
-        actions
-                .click(webElement1)
-                .click(webElement2)
-                .build().
-                perform();
+    public MainMenu reviewBin() throws InterruptedException {
+        webElement1.click();
+        Thread.sleep(1000);
+        return this;
     }
 
-    public void AddSomeItems(){
-        Actions actions = new Actions(getDriver());
-        actions
-                .click(findOlives)
-                .pause(1000)
-                .click(addOlives)
-                .pause(1000)
-                .click(addOils)
-                .pause(1000)
-                .click(addSomeOils)
-                .pause(1000)
-                .release(addSomeOils)
-                .sendKeys(addSomeOils, "3")
-                .click(addToBin)
-                .click(addToBinOlives)
-                .build()
-                .perform();
+    public MainMenu addSomeItems() throws InterruptedException {
+        findOlives.click();
+        Thread.sleep(500);
+        addOlives.click();
+        Thread.sleep(500);
+        addOils.click();
+        Thread.sleep(500);
+        addSomeOils.click();
+        Thread.sleep(500);
+        addSomeOils.clear();
+        addSomeOils.sendKeys("3");
+        addToBin.click();
+        addToBinOlives.click();
+        return this;
     }
 
-    public void AddPremiumOil(){
-        Actions actions = new Actions(getDriver());
-        actions
-                .click(findOil)
-                .pause(1000)
-                .click(findPremiumOil)
-                .pause(1000)
-                .click(addPremiumOil)
-                .build()
-                .perform();
+
+    public MainMenu addPremiumOil() throws InterruptedException {
+                findOil.click();
+                Thread.sleep(500);
+                findPremiumOil.click();
+                Thread.sleep(500);
+                addPremiumOil.click();
+                Thread.sleep(500);
+                return this;
     }
 }

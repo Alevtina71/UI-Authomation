@@ -23,11 +23,10 @@ public class Authorization extends AbstractPage {
         super(driver);
     }
 
-    public void loginIn() throws InterruptedException {
-        this.webElement.click();
-        Thread.sleep(1000);
+    public Authorization input(){
+        webElement.click();
+        return this;
     }
-
     public Authorization setLogin(String login){
         this.emailInputField.click();
         this.emailInputField.sendKeys(login);
@@ -40,15 +39,16 @@ public class Authorization extends AbstractPage {
         return this;
     }
 
-    public void loginIn(String login, String password){
+    public void loginIn(String login, String password) throws InterruptedException {
 
         Actions loginIn = new Actions(getDriver());
         loginIn
-                .sendKeys(this.emailInputField,login)
-                .click(this.passwordInputField)
-                .sendKeys(password)
-                .click(this.loginButton)
-                .build()
-                .perform();
+                .click(this.webElement);
+                Thread.sleep(1000);
+                this.emailInputField.sendKeys(login);
+                Thread.sleep(1000);
+                this.passwordInputField.sendKeys(password);
+                Thread.sleep(1000);
+                loginButton.click();
     }
 }
